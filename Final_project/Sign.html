@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <link rel="stylesheet" href="Sign.css" />
+  </head>
+  <body>
+    <div class="content">
+      <b><p>Sign In</p></b>
+    </div>
+
+    <form action="post">
+      <div class="form-group">
+        <label for="gmail">Gmail</label>
+        <input type="email" id="gmail" placeholder="Enter Email" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter Password"
+          required
+        />
+      </div>
+      <button id="submit">Confirm</button>
+    </form>
+    <script>
+       document.getElementById('submit').addEventListener('click', function(event) {
+    
+      let password = document.getElementById('password').value;
+      let email = document.getElementById('gmail').value;
+
+      if (!isValidPassword(password)) {
+        alert('Password must be at least 8 characters long, contain both upper and lower case alphabets, and cannot be blank.');
+        event.preventDefault();
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        alert('Please enter a valid email address.');
+        event.preventDefault();
+        return;
+      }
+      
+      alert("Your are login now")
+    });
+   
+    function isValidEmail(email) {
+      let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+
+    function isValidPassword(password) {
+      // Check if password is blank
+      if (password === '') {
+        return false;
+      }
+
+      // Check if password is at least 8 characters long
+      if (password.length < 8) {
+        return false;
+      }
+
+      // Check if password contains both upper and lower case alphabets
+      let hasUpperCase = false;
+      let hasLowerCase = false;
+      for (var i = 0; i < password.length; i++) {
+        if (password[i] >= 'A' && password[i] <= 'Z') {
+          hasUpperCase = true;
+        }
+        if (password[i] >= 'a' && password[i] <= 'z') {
+          hasLowerCase = true;
+        }
+
+      }
+
+      return hasUpperCase && hasLowerCase;
+    }
+    </script>
+  </body>
+</html>

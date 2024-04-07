@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>college project</title>
+    <link rel="stylesheet" href="Home_page.css" />
+  </head>
+  <body>
+    <!-- <video autoplay loop muted plays-inline class="back-vedio">
+      <source src="image/short_vedio.mp4" type="video/mp4" />
+    </video> -->
+
+    <div class="videoWrapper">
+      <div class="gradient"></div>
+      <iframe
+        src="https://www.youtube.com/embed/UVe3NsAD9RA?si=ojXg_1R2ojPjq1GD?&autoplay=1&mute=1&controls=0"
+        style="pointer-events: none"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <div class="banner">
+      <div class="navbar">
+        <img src="image/college(logo).jpg" alt="error" />
+        <ul>
+          <li><a href="Home_page.html">Home</a></li>
+          <li><a href="About-us.html">About us </a></li>
+          <li><a href="Register.html">Registration</a></li>
+          <li><a href="Sign.html">Sign in</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content">
+      <h1>Welcome Students</h1>
+      <p>
+        Welcome, new students! Harvard awaits your brilliance. <br />
+        Embrace learning, friendship, and the journey ahead. Together, we
+        thrive.
+      </p>
+      <button><a href="About-us.html">Watch More </a></button>
+      <button><a href="Register.html">Registration</a></button>
+    </div>
+
+    <script>
+      player = new YT.Player("player", {
+        height: "490",
+        width: "725",
+        videoId:
+          "https://www.youtube.com/embed/LlCwHnp3kL4?si=dnAJXAiB_uZalpXg&autoplay=1&mute=1&controls=0",
+        events: {
+          onReady: onPlayerReady,
+          onStateChange: onPlayerStateChange,
+        },
+      });
+
+      function onPlayerReady(event) {
+        player.setVolume(100);
+        event.target.playVideo();
+      }
+
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING) {
+          event.target.setPlaybackQuality("hd720"); // <-- WORKS!
+        }
+      }
+    </script>
+  </body>
+</html>

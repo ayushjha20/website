@@ -1,0 +1,76 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: linear-gradient(
+        rgba(200, 212, 235, 0.75),
+        rgba(213, 225, 228, 0.75)
+      ),
+      url(image/photo.jpg);
+  
+    background-position: center;
+    background-size: cover;
+  }
+  
+
+.content p{
+    font-size: xx-large;
+    font-style: italic;
+    color: rgb(8, 46, 198);
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+
+}
+form {
+    border-radius: 10px;
+    background: linear-gradient(145deg, #e1e1e4, #b8b8e6);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    max-width: 400px; 
+    margin: 0 auto; 
+    padding: 20px;
+    text-align: center;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: calc(
+      100% - 22px
+    ); /* Adjusted width to account for padding and border */
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Added box-sizing to ensure input width calculation is accurate */
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    text-decoration: none;
+    color: #f2e4e4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  

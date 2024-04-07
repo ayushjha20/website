@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="Register.css">
+</head>
+<body>
+  <div class="title">
+    <p>Registration Form</p>
+  </div>
+  <form action="post" id="registrationForm">
+    <div class="form-group">
+      <label for="name">Username</label>
+      <input type="text" id="name" placeholder="Enter Username" required />
+    </div>
+    <div class="form-group">
+      <label for="gmail">Email</label>
+      <input type="email" id="gmail" placeholder="Enter Email" required />
+    </div>
+    <div class="form-group">
+      <label for="DoB">Date Of Birth</label>
+      <input type="date" id="DoB" required />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter Password" required />
+    </div>
+    <button  id="submit">Confirm</button>
+  </form>
+
+  <script>
+    document.getElementById('submit').addEventListener('click', function(event) {
+      let name = document.getElementById('name').value;
+      let email = document.getElementById('gmail').value;
+      let password = document.getElementById('password').value;
+      
+      if(name ===''){
+        alert('Please enter a valid user name');
+        event.preventDefault();
+        return;
+
+        if (!isValidEmail(email)) {
+        alert('Please enter a valid email address.');
+        event.preventDefault();
+        return;
+      }
+      }
+      
+
+      if (!isValidPassword(password)) {
+        alert('Password must be at least 8 characters long, contain both upper and lower case alphabets, and cannot be blank.');
+        event.preventDefault();
+        return;
+      }
+      
+      alert("Your are now regeister with our system")
+    });
+   
+    function isValidEmail(email) {
+      let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+    
+    function isValidPassword(password) {
+      // Check if password is blank
+      if (password === '') {
+        return false;
+      }
+
+      // Check if password is at least 8 characters long
+      if (password.length < 8) {
+        return false;
+      }
+
+      // Check if password contains both upper and lower case alphabets
+      let hasUpperCase = false;
+      let hasLowerCase = false;
+      for (var i = 0; i < password.length; i++) {
+        if (password[i] >= 'A' && password[i] <= 'Z') {
+          hasUpperCase = true;
+        }
+        if (password[i] >= 'a' && password[i] <= 'z') {
+          hasLowerCase = true;
+        }
+
+      }
+
+      return hasUpperCase && hasLowerCase;
+    }
+  </script>
+</body>
+</html>
